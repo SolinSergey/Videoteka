@@ -1,0 +1,12 @@
+.empty_container{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background: #ef9223;
+    color: black;
+}

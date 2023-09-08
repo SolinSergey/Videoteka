@@ -1,0 +1,13 @@
+.genre {
+    position: relative;
+    margin-top: 5px;
+    margin-right: 2px;
+}
+.genre_item{
+    display: inline-block;
+    background: #f70661;
+}
+.genre_item span{
+    padding: 2px 5px;
+    margin-right: 2px;
+}

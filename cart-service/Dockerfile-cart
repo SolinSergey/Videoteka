@@ -1,0 +1,6 @@
+FROM openjdk:17
+ARG jarFile=/cart-service/target/cart-service-2.7.9.jar
+WORKDIR /opt/app
+COPY ${jarFile} cart.jar
+EXPOSE 8190
+ENTRYPOINT ["java","-jar","cart.jar"]

@@ -1,0 +1,33 @@
+.country_list__container{
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 90%;
+}
+
+.country_list__title{
+
+    font-size: 18px;
+    font-weight: 500;
+    color: #c5c5c5;
+    margin-bottom: 10px;
+}
+.country_list__title button{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.country_list__title button:hover{
+    color: #ef9223;
+}

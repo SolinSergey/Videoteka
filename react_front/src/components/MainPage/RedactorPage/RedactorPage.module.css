@@ -1,0 +1,267 @@
+.redactor_container {
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 90%;
+    /*border: 1px solid #646464;*/
+}
+
+.redactor__box {
+    position: relative;
+    display: flex;
+    /*flex-direction: column;*/
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    background: #2b303b;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.box_background {
+
+}
+
+.redactor__img_container {
+    width: 450px;
+    height: 100px;
+
+}
+
+.redactor__img_container img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #3f00df;
+    border-radius: 50px;
+    margin: 25px;
+}
+
+.img_input {
+
+}
+
+.details {
+
+}
+
+.input_container {
+    position: relative;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    overflow-x: clip;
+}
+
+.input_container label {
+    position: absolute;
+    top: -18px;
+    left: 0px;
+    font-size: 12px;
+    color: #c5c5c5;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.input_container input {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: #c5c5c5;
+}
+
+.input_container input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #e74c3c;
+}
+
+.input_container input:focus ~ label {
+    top: -18px;
+    font-size: 12px;
+    color: #e74c3c;
+}
+
+.title_input {
+    width: 525px;
+}
+
+.description_area {
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    width: 500px;
+}
+
+.description_area label {
+    position: absolute;
+    top: -16px;
+    left: 350px;
+    font-size: 16px;
+    color: #c5c5c5;
+    pointer-event: none;
+    transition: all 0.7s ease-in-out;
+}
+
+.description_area textarea {
+    border: 1px solid #555;
+    border-radius: 10px;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 5px;
+    font-size: 16px;
+    color: #c5c5c5;
+    resize: none;
+}
+
+.description_area textarea:focus {
+    outline: none;
+    border: 1px solid #e74c3c;
+}
+
+.description_area textarea:focus ~ label {
+    top: -16px;
+    left: 0;
+    font-size: 12px;
+    color: #e74c3c;
+}
+
+.details_box {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    width: 500px;
+}
+
+.details_box input {
+    width: 150px;
+}
+
+.select_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.country {
+
+}
+
+.director {
+
+}
+
+/*.genre_box {*/
+/*    background: var(--surface-card);*/
+/*    padding: 2rem;*/
+/*    border-radius: 10px;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+.option_box {
+    display: flex;
+}
+
+.option_box,
+.director_box,
+.country_box,
+.genre_box {
+    background: transparent;
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
+}
+
+.director_box,
+.country_box,
+.genre_box {
+    margin: 10px;
+    font-weight: 500;
+    color: #c5c5c5;
+}
+
+.director_box {
+
+}
+
+.country_box {
+
+}
+
+.genre_box {
+}
+
+.board_box {
+    display: flex;
+}
+
+.left_board,
+.right_board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    width: 170px;
+    height: 320px;
+    background: #EFEFEF;
+    overflow-y: auto;
+}
+
+.right_board {
+}
+
+.btn_post {
+    height: 30px;
+    background-color: #3f00df;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.send_new_film__btn {
+    position: absolute;
+    top: 30px;
+    right: 300px
+}
+
+.send_new_film__btn button{
+    padding: 10px 20px;
+    background: #63386d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.clear_directors__btn {
+
+}
+
+.formControl {
+    width: 120px;
+
+}
+
+.select_fields {
+    position: absolute;
+    top: 30px;
+    right: 300px;
+    width: 220px;
+    color: white;
+}
+
+.select_fields__label {
+    display: flex;
+    justify-content: space-between;
+}
+.select_fields__label label{
+    margin-right: 5px;
+}

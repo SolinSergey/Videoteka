@@ -1,0 +1,61 @@
+.add-review__container{
+
+}
+.review__container_textarea{
+    position: relative;
+    margin: 25px;
+    width: 500px;
+    color: black;
+}
+.review__container_textarea label{
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    font-size: 16px;
+    color: #c5c5c5;
+    pointer-event: none;
+    transition: all 0.7s ease-in-out;
+}
+.review__container_textarea textarea{
+    border: 1px solid #555;
+    border-radius: 10px;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 5px;
+    font-size: 16px;
+    color: #000000;
+    resize: none;
+}
+.review__container_textarea textarea:focus{
+    outline: none;
+    border: 1px solid #e74c3c;
+}
+.review__container_textarea textarea:focus ~ label{
+    top: -16px;
+    left: 0;
+    font-size: 12px;
+    color: #e74c3c;
+}
+
+.add-review__container__btn-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-review__container__send_btn{
+    position: absolute;
+    bottom: 120px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c5c5c5;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.add-review__container__send_btn:hover{
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+}

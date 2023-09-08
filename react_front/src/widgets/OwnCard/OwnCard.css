@@ -1,0 +1,15 @@
+.own-card__container{
+    margin: 10px;
+}
+.own-card__description{
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+.own-card__title{
+    height: 100px;
+    overflow: hidden;
+}

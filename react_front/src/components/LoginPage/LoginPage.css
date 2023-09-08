@@ -1,0 +1,169 @@
+
+body {
+    background-color: rgb(1, 1, 25);
+}
+
+input[type="text"i] {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    appearance: none;
+}
+
+input[type="password"i] {
+    -webkit-text-security: disc !important;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.login-page__main {
+    display: flex;
+    justify-content: center;
+    /*margin-top: 15px;*/
+
+}
+
+.login-page__right-component {
+    width: 350px;
+    opacity: 1;
+    transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: rgb(0, 0, 0);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 8px;
+    border: 1px solid rgb(56, 56, 56);
+    overflow: hidden;
+    margin-top: 80px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+
+}
+
+.login-page__logo {
+    font-size: 48px;
+    font-weight: 600;
+    color: #63386d;
+
+}
+
+.login-page__sign-in {
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.login-page__ordiv {
+    display: flex;
+    justify-content: center;
+}
+
+.login-page__divider {
+    border: 1px solid rgb(99, 56, 109);
+    width: 80px;
+    height: 0px;
+    margin-top: 25px;
+}
+
+.login-page__divider-text {
+
+    font-size: 24px;
+    font-weight: 400;
+    color: rgb(159, 252, 164);
+    margin: 10px;
+}
+
+
+.google__google-btn {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 310px;
+    border: 1px solid rgba(51, 153, 255, 0.5);
+    color: rgb(2, 90, 179);
+    min-width: 64px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    background-color: rgb(115, 176, 238);
+    outline: 0;
+    height: 36px;
+    margin-top: 15px;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.google__google-btn img {
+    margin-right: 10px;
+    text-align: center;
+
+}
+
+.login-page__forgot-password {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(128, 255, 139);
+    margin-top: 12px;
+    line-height: 14px;
+}
+.login-page__forgot-password button {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(128, 255, 139);
+    cursor: pointer;
+}
+.login-page__signup-option {
+    width: 350px;
+    height: 50px;
+    opacity: 1;
+    transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: rgb(0, 0, 0);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 8px;
+    border: 1px solid rgb(56, 56, 56);
+    overflow: hidden;
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+}
+
+.login-page__sign-in-prop {
+    color: rgb(128, 191, 255);
+
+}
+
+.login-page__sign-in-prop a{
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-page__sign-up-prop {
+    color: rgb(128, 191, 255);
+}
+
+.login-page__sign-up-prop a {
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}

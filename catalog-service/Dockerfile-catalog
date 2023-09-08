@@ -1,0 +1,6 @@
+FROM openjdk:17
+ARG jarFile=/catalog-service/target/catalog-service-2.7.9.jar
+WORKDIR /opt/app
+COPY ${jarFile} catalog.jar
+EXPOSE 8189
+ENTRYPOINT ["java","-jar","catalog.jar"]

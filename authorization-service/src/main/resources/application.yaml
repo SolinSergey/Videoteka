@@ -1,0 +1,45 @@
+server:
+  port: 8187
+  servlet:
+    context-path: /auth-service
+flyway:
+  user: security
+  password: SequrityVideoteka2023
+  schemas: users_roles_db
+  url: jdbc:postgresql://localhost:5432/users_roles_db
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/users_roles_db
+    username: postgres
+    password: admin
+  rabbitmq:
+    host: ${RABBIT_LOCATION:127.0.0.1}
+    port: 5672
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/users_roles_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#    driver-class-name: org.postgresql.Driver
+#    username: postgres
+#    password: 123
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: update
+#logging:
+#  level:
+#    org.springframework.security: trace
+integrations:
+  email-service:
+    url: http://${EMAIL_SERVICE_LOCATION:127.0.0.1}:8199/email-service
+    connect-timeout: 5000
+    read-timeout: 20000
+    write-timeout: 5000
+
+jwt:
+  lifetime: 36000000
+
+

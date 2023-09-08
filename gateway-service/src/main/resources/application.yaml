@@ -1,0 +1,64 @@
+server:
+  port: 5555
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders: "*"
+      routes:
+        - id: authorization-service
+          #          uri: http://localhost:8187
+          uri: http://${AUTH_SERVICE_LOCATION:127.0.0.1}:8187
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/auth-service
+            - JwtAuthFilter
+            - MyAuthFilter
+
+        - id: cabinet-order-service
+          #          uri: http://localhost:8192
+          uri: http://${CABINET_SERVICE_LOCATION:127.0.0.1}:8192
+          predicates:
+            - Path=/cabinet/**
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/cabinet-order-service
+            - JwtAuthFilter
+            - MyAuthFilter
+
+        - id: cart-service
+          #          uri: http://localhost:8190
+          uri: http://${CART_SERVICE_LOCATION:127.0.0.1}:8190
+          predicates:
+            - Path=/cart/**
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/cart-service
+            - JwtAuthFilter
+            - MyAuthFilter
+
+        - id: catalog-service
+          #          uri: http://localhost:8189
+          uri: http://${CATALOG_SERVICE_LOCATION:127.0.0.1}:8189
+          predicates:
+            - Path=/catalog/**
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/catalog-service
+            - JwtAuthFilter
+            - MyAuthFilter

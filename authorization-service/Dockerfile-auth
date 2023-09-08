@@ -1,0 +1,6 @@
+FROM openjdk:17
+ARG jarFile=/authorization-service/target/authorization-service-2.7.9.jar
+WORKDIR /opt/app
+COPY ${jarFile} auth.jar
+EXPOSE 8187
+ENTRYPOINT ["java","-jar","auth.jar"]

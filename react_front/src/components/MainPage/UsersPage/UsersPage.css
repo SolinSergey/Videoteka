@@ -1,0 +1,31 @@
+.users_page{
+    position: absolute;
+    top: 10px;
+    left:270px;
+    height: 87%;
+
+    padding-top: 10px;
+}
+.users_page__title{
+    font-size: 16px;
+    font-weight: 600;
+    color: #c5c5c5;
+    margin-bottom: 10px;
+}
+.user_page__box{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.banned{
+    color: darkred;
+}
+.active_user{
+    color: darkgreen;
+}
+.delete-user__btn{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

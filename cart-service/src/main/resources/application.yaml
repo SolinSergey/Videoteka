@@ -1,0 +1,35 @@
+server:
+  port: 8190
+  servlet:
+    context-path: /cart-service
+utils:
+  cart:
+    prefix: SPRING_WEB_APP_
+integrations:
+  catalog-service:
+    url: http://${CATALOG_SERVICE_LOCATION:127.0.0.1}:8189/catalog-service
+#    url: http://localhost:8189/catalog-service
+    connect-timeout: 5000
+    read-timeout: 10000
+    write-timeout: 5000
+  cabinet-order-service:
+#    url: http://localhost:8192/cabinet-order-service
+    url: http://${CABINET_SERVICE_LOCATION:127.0.0.1}:8192/cabinet-order-service
+    connect-timeout: 5000
+    read-timeout: 10000
+    write-timeout: 5000
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://194.87.101.43:5432/catalog_db
+#    username: postgres
+#    password: 123
+#  jpa:
+#    show-sql: true
+#    properties:
+#      hibernate:
+spring:
+  redis:
+    host: ${REDIS_LOCATION:127.0.0.1}
+    port: 6379
+#        dialect: org.hibernate.dialect.PostgreSQLDialect

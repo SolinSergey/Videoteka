@@ -1,0 +1,10 @@
+.dropdown_item {
+    display: flex;
+    margin: 10px auto;
+}
+
+.dropdown_item a{
+    max-width: 200px;
+    margin-left: 10px;
+    transition: 1s;
+}

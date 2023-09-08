@@ -1,0 +1,184 @@
+.header {
+    height: 70px;
+    z-index: 1;
+}
+.user_name__under_avatar{
+    color: #ef9223;
+    font-size: 14px;
+    width: 110px;
+}
+.top_header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: rgba(17, 23, 25, 0.4);
+    backdrop-filter: blur(5px);
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-around;
+    height: 70px;
+    z-index: 3;
+}
+
+.logo img {
+    height: 50px;
+    margin-top: 10px;
+}
+.menu_deck{
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    height: 70px;
+}
+
+.avatar {
+
+}
+
+.logout_btn {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    color: #282c34;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tool_bar {
+    display: flex;
+}
+.auth_container{
+    display: flex;
+}
+.menu_container {
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.dropdown_trigger {
+    width: fit-content;
+    margin-right: 0.5rem;
+}
+
+.dropdown_menu {
+    position: relative;
+    top: 15px;
+    right: 63px;
+    background-color: rgb(197, 196, 196);
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 200px;
+    color: #1c9bf6;
+
+}
+
+.dropdown_menu::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 150px;
+    height: 20px;
+    width: 20px;
+    background: rgb(197, 196, 196);
+    transform: rotate(45deg);
+}
+
+.dropdown_menu a {
+    color: #807f7f;
+}
+
+.dropdown_menu ul li {
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid #807f7f;
+}
+
+.dropdown_menu ul li:hover a {
+    color: #cc0000;
+    cursor: pointer;
+}
+
+.dropdown_menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.5s ease;
+}
+
+.dropdown_menu.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.8s ease;
+}
+
+.menu_username {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 0;
+    font-weight: 500;
+    color: rgba(19, 35, 74, 0.78);
+    line-height: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu_location {
+    font-size: 14px;
+    color: #807f7f;
+    font-weight: 400;
+}
+
+.iconblock__avatar {
+    margin: 4px auto;
+
+}
+
+.bottom_header {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.cart_box {
+    position: relative;
+    top: 20px;
+    right: -40px;
+}
+
+.cart_box__button {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.cart_box__button span {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.login_btn {
+    position: relative;
+    top: 20px;
+    /*right: 170px;*/
+}
+.login_btn button{
+    padding: 5px;
+    background: #63386d;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #80498d;
+}
+

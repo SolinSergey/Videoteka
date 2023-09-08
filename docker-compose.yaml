@@ -1,0 +1,217 @@
+version: '3.8'
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: "-rabbit log_levels [{connection,error},{default,error}] disk_free_limit 2147483648"
+    volumes:
+      - ~/rabbitmq:/var/lib/rabbitmq
+    networks:
+      - videoteka-net
+    restart: always
+
+  redis-videoteka:
+    image: redis:7.0.11
+    container_name: redis-videoteka
+    ports:
+      - "6379:6379"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    networks:
+      - videoteka-net
+    restart: always
+
+  security-db:
+    image: postgres:15
+    container_name: users-roles-db
+    environment:
+      POSTGRES_DB: "users_roles_db"
+      POSTGRES_USER: "security"
+      POSTGRES_PASSWORD: "SecurityVideoteka2023"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ~/docker/users_roles_db:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+    networks:
+      - videoteka-net
+    restart: always
+
+  catalog-db:
+    image: postgres:15
+    container_name: catalog-db
+    environment:
+      POSTGRES_DB: "catalog_db"
+      POSTGRES_USER: "catalog"
+      POSTGRES_PASSWORD: "CatalogVideoteka2023"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ~/docker/catalog_db:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - videoteka-net
+    restart: always
+
+  orders-db:
+    image: postgres:15
+    container_name: orders-db
+    environment:
+      POSTGRES_DB: "orders_db"
+      POSTGRES_USER: "orders"
+      POSTGRES_PASSWORD: "OrdersVideoteka2023"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ~/docker/orders_db:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    networks:
+      - videoteka-net
+    restart: always
+
+  catalog-service:
+    depends_on:
+      - catalog-db
+    container_name: catalog-service
+    build:
+      context: .
+      dockerfile: catalog-service/Dockerfile-catalog
+    ports:
+      - "8189:8189"
+    environment:
+      SPRING_DATASOURCE_URL:  "jdbc:postgresql://catalog-db:5432/catalog_db"
+      SPRING_DATASOURCE_USERNAME: "catalog"
+      SPRING_DATASOURCE_PASSWORD: "CatalogVideoteka2023"
+    networks:
+      - videoteka-net
+    volumes:
+      - ./secret:/opt/app/secret
+    restart: always
+
+  cabinet-service:
+    depends_on:
+      - orders-db
+      - rabbitmq
+    container_name: cabinet-service
+    build:
+      context: .
+      dockerfile: cabinet-order-service/Dockerfile-cabinet
+    ports:
+      - "8192:8192"
+    environment:
+      SPRING_DATASOURCE_URL:  "jdbc:postgresql://orders-db:5432/orders_db"
+      SPRING_DATASOURCE_USERNAME: "orders"
+      SPRING_DATASOURCE_PASSWORD: "OrdersVideoteka2023"
+      CATALOG_SERVICE_LOCATION: catalog-service
+      CART_SERVICE_LOCATION: cart-service
+      EMAIL_SERVICE_LOCATION: email-service
+      AUTH_SERVICE_LOCATION: authorization-service
+      RABBIT_LOCATION: rabbitmq
+    networks:
+      - videoteka-net
+    volumes:
+      - ./secret:/opt/app/secret
+    restart: always
+
+  cart-service:
+    depends_on:
+      - redis-videoteka
+    container_name: cart-service
+    build:
+      context: .
+      dockerfile: cart-service/Dockerfile-cart
+    environment:
+      CATALOG_SERVICE_LOCATION: catalog-service
+      CABINET_SERVICE_LOCATION: cabinet-service
+      REDIS_LOCATION: redis-videoteka
+      SPRING_REDIS_PORT: 6379
+    ports:
+      - "8190:8190"
+    networks:
+      - videoteka-net
+    volumes:
+      - ./secret:/opt/app/secret
+    restart: always
+
+  authorization-service:
+    depends_on:
+      - security-db
+    container_name: authorization-service
+    build:
+      context: .
+      dockerfile: authorization-service/Dockerfile-auth
+    ports:
+      - "8187:8187"
+    environment:
+      SPRING_DATASOURCE_URL:  "jdbc:postgresql://users-roles-db:5432/users_roles_db"
+      SPRING_DATASOURCE_USERNAME: "security"
+      SPRING_DATASOURCE_PASSWORD: "SecurityVideoteka2023"
+      EMAIL_SERVICE_LOCATION: email-service
+    networks:
+      - videoteka-net
+    volumes:
+      - ./secret:/opt/app/secret
+    restart: always
+
+  gateway-service:
+    depends_on:
+      - authorization-service
+    container_name: gateway-service
+    build:
+      context: .
+      dockerfile: gateway-service/Dockerfile-gateway
+    ports:
+      - "5555:5555"
+    environment:
+      CATALOG_SERVICE_LOCATION: catalog-service
+      CART_SERVICE_LOCATION: cart-service
+      AUTH_SERVICE_LOCATION: authorization-service
+      CABINET_SERVICE_LOCATION: cabinet-service
+    networks:
+      - videoteka-net
+    volumes:
+      - ./secret:/opt/app/secret
+    restart: always
+
+  front-service:
+    depends_on:
+      - gateway-service
+    container_name: front-service
+    build:
+      context: .
+      dockerfile: front-service/Dockerfile-front
+    ports:
+      - "3000:3000"
+    networks:
+      - videoteka-net
+    restart: always
+
+  email-service:
+    depends_on:
+      - gateway-service
+      - cabinet-service
+      - rabbitmq
+    container_name: email-service
+    build:
+      context: .
+      dockerfile: email-service/Dockerfile-email
+    ports:
+      - "8199:8199"
+    environment:
+      RABBIT_LOCATION: rabbitmq
+    networks:
+      - videoteka-net
+    volumes:
+      - ./secret:/opt/app/secret
+    restart: always
+
+networks:
+  videoteka-net:
+    driver: bridge

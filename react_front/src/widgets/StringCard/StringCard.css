@@ -1,0 +1,78 @@
+.string_container {
+    display: flex;
+    align-items: center;
+    width: 850px;
+    height: 80px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 5px 5px 16px 2px #CCCCCC;
+    margin-bottom: 25px ;
+
+}
+
+.string__cover {
+    width: 50px;
+    height: 70px;
+    margin: 25px;
+}
+
+.string__cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.string__details {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-left: 60px;
+}
+
+.string__title {
+
+    font-size: 18px;
+    font-weight: 600;
+    text-align: start;
+}
+
+
+.string__detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #979797;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.string__quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+}
+.string__quantity span{
+    font-size: 10px;
+    color: #979797;
+}
+.string__quantity span{
+    margin: 5px auto;
+}
+
+.string_price {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+}
+.string_price span{
+    display: inline;
+    width: 100%;
+    font-weight: 600;
+}
+
+.string__delete button{
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

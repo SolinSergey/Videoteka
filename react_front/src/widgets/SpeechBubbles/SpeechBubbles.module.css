@@ -1,0 +1,26 @@
+.speech_container{
+
+}
+.bubble{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 550px;
+    height: 77px;
+    color: #c5c5c5;
+    background: #282c34;
+    border-left: 3px solid yellow;
+    padding: 15px 10px;
+    overflow-y: scroll;
+}
+.bubble::-webkit-scrollbar{
+    display: none;
+}
+.bubble span{
+    text-align: start;
+    font-size: 16px;
+}
+.bubble i{
+    text-align: end;
+    font-size: 12px;
+}

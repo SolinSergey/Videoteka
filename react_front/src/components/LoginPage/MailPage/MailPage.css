@@ -1,0 +1,14 @@
+.mail_page__container{
+    position: absolute;
+    top: 50vh;
+    left: 50vh;
+    background: #EFEFEF;
+}
+.MuiInputBase-root{
+    height: 50px;
+    width: 100%;
+}
+.MuiDivider-root{
+    height: 1px;
+    width: 20rem;
+}

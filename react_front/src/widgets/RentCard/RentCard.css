@@ -1,0 +1,17 @@
+
+.rent-card__container{
+margin: 10px;
+
+}
+.rent-card__description{
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+.rent-card__title{
+    height: 100px;
+    overflow: hidden;
+}

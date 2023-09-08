@@ -1,0 +1,6 @@
+FROM openjdk:17
+ARG jarFile=/front-service/target/front-service-2.7.9.jar
+WORKDIR /opt/app
+COPY ${jarFile} front.jar
+EXPOSE 3000
+ENTRYPOINT ["java","-jar","front.jar"]

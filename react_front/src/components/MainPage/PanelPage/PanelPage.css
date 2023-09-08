@@ -1,0 +1,16 @@
+.panel_container{
+position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 50px 70px;
+}
+.panel__box{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+}

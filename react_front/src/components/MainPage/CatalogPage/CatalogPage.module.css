@@ -1,0 +1,145 @@
+.catalog_container{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    /*background: rgb(0, 0, 0);*/
+}
+.empty {
+    color: white;
+}
+.genre_bar{
+    margin: 25px 0;
+}
+.genre_bar button{
+    color: #c5c5c5;
+    font-weight: 500;
+}
+.selected{
+    color: #249700;
+}
+.unselected{
+    color: darkblue;
+}
+
+.catalog {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 200px;
+    margin-bottom: 35px;
+    /*margin: 25px;*/
+    width: 80%;
+    height: fit-content;
+    overflow-y: auto;
+}
+.catalog::-webkit-scrollbar{
+    display: none;
+}
+.pagination{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: white;
+
+}
+.current_pages{
+    float: left;
+}
+.pagination_items{
+    float: right;
+    color: white;
+    margin:  15px;
+}
+
+/*filter*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+.filter_card{
+    position: fixed;
+    align-items: center;
+    padding: 25px 0;
+    right: 25px;
+    top: 210px;
+    height: 350px;
+    width: 300px;
+    border: 1px solid rgba(32,32,32,1);
+    border-radius: 10px;
+    background: rgb(17, 23, 25);
+}
+
+.filter_title{
+    color: white;
+}
+.year_range{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.field{
+
+}
+
+.field label{
+    color: white;
+    /*margin: 10px;*/
+}
+.field input{
+    width: 100px;
+    height: 100%;
+    outline: none;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: 1px solid rgba(32,32,32,1);
+    -moz-appearance: none;
+}
+
+.year_range .field{
+    display: flex;
+    align-items: center;
+    height: 35px;
+    width: 100%;
+}
+.start__field{
+    width: 100px;
+}
+
+.separator{
+    width: 50px;
+    display: flex;
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.end__field{
+    width: 100px;
+}
+.clear{
+    margin-top: 25px;
+    background-color: #63386d;
+    color: white;
+}
+.filter_btn{
+    color: #ef9223;
+}
+.active_btn{
+    color: white;
+}
+.catalog_menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.change_state{
+    display: flex;
+}
+.change_state button{
+    color: #ef9223;
+}

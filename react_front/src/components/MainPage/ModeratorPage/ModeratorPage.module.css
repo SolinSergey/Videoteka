@@ -1,0 +1,51 @@
+.moderator_container{
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    width: 75%;
+    height: 90%;
+    overflow-y: auto;
+    background-color: #3c414a;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-top: 25px
+}
+.moderator_container::-webkit-scrollbar{
+    display: none;
+}
+.message_box{
+    margin-bottom: 25px;
+
+}
+.btn_box{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    width: 100px;
+
+}
+.apply_btn{
+    background: transparent;
+    color: #249700;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+}
+.apply_btn:hover{
+    color: #2fdc00;
+}
+.deny_btn{
+    background: transparent;
+    color: #e74c3c;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+}
+.deny_btn:hover{
+    color: #c03434;
+}

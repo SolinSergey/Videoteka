@@ -1,0 +1,41 @@
+server:
+  port: 8192
+  servlet:
+    context-path: /cabinet-order-service
+flyway:
+  user: postgres
+  password: admin
+  schemas: orders_db
+  url: jdbc:postgresql://localhost:5432/orders_db
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/orders_db
+    username: postgres
+    password: admin
+  rabbitmq:
+    host: ${RABBIT_LOCATION:127.0.0.1}
+    port: 5672
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/orders_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#    driver-class-name: org.postgresql.Driver
+#    username: postgres
+#    password: 123
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: update
+integrations:
+  cart-service:
+#    url: http://localhost:8190/cart-service
+    url: http://${CART_SERVICE_LOCATION:127.0.0.1}:8190/cart-service
+  catalog-service:
+#    url: http://localhost:8189/catalog-service
+    url: http://${CATALOG_SERVICE_LOCATION:127.0.0.1}:8189/catalog-service
+  auth-service:
+    url: http://${AUTH_SERVICE_LOCATION:127.0.0.1}:8187/auth-service
+

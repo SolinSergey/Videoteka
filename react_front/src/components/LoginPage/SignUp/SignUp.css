@@ -1,0 +1,60 @@
+.signup-page__sign-in__text {
+    background-color: rgba(134, 145, 155, 0.38);
+    color: #c5c5c5;
+    border: 1px solid rgba(191, 222, 255, 0.5);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    height: 36px;
+    padding-left: 7px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    outline: 0;
+    overflow: hidden;
+
+}
+.avatar_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border: 2px solid olivedrab;
+    border-radius: 50px;
+}
+.input_avatar{
+    height: 72px;
+    width: 72px;
+    background: transparent;
+    outline:0;
+    opacity:0;
+    user-select:none
+}
+.signup-page__sign-in__text:hover {
+    border: 1px solid rgba(99, 56, 109, 0.767);
+}
+
+.signup-page__sign-in__button {
+    width: 310px;
+    border: 1px solid rgba(51, 153, 255, 0.5);
+    color: rgb(51, 153, 255);
+    min-width: 64px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    background-color: transparent;
+    outline: 0px;
+    height: 36px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.signup-page__sign-in__button:hover {
+    background-color: rgba(0, 86, 173, 0.281);
+    border: 1px solid rgba(71, 163, 255, 0.767);
+
+}

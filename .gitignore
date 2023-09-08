@@ -1,0 +1,14 @@
+/.idea/
+/target/
+/target/*
+/lib/
+/lib/*
+/.idea/*
+*.class
+*.iml
+.DS_Store
+#**/private.key
+#**/public.key
+#**/password.txt
+**/target/*
+

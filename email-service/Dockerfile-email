@@ -1,0 +1,6 @@
+FROM openjdk:17
+ARG jarFile=/email-service/target/email-service-2.7.9.jar
+WORKDIR /opt/app
+COPY ${jarFile} email.jar
+EXPOSE 8199
+ENTRYPOINT ["java","-jar","email.jar"]

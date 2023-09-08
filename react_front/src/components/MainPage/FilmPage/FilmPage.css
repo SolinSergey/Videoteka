@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.film-page {
+    width: 100%;
+    border: 1px solid rgba(32, 32, 32, 1);
+    border-radius: 5px;
+}
+
+.movie {
+    width: 870px;
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+}
+
+.movie__hero {
+    flex: 0 0 45%;
+    width: 350px;
+}
+
+.movie__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.movie__content {
+    background-color: #000000;
+    flex: 1;
+    width: 350px;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie__price {
+    background: linear-gradient(to bottom, #A9C9FF 0%, #000000 100%);
+    flex: 0 0 50px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    writing-mode: vertical-lr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.heading__primary {
+    font-size: 16px;
+    margin-right: auto;
+    color: royalblue;
+}
+
+.fa-fire {
+    color: salmon;
+}
+
+.movie__tag {
+    font-size: 10px;
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 100px;
+    margin-right: 8px;
+    display: block;
+    text-transform: uppercase;
+
+}
+
+.movie__tag--1 {
+    background-color: #FFBBEC;
+    color: #282c34;
+}
+
+.movie__description {
+    font-size: 14px;
+    color: #c5c5c5;
+}
+
+.movie__details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.movie__details h4 {
+    margin-right: 10px;
+    color: #ef9223;
+}
+
+.movie__detail {
+    font-size: 13px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ef9223;
+}
+
+.movie__genre {
+    font-size: 13px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.icons i {
+    margin-right: 3px;
+    font-size: 18px;
+}
+
+.icons-red {
+    color: salmon;
+}
+
+.icons-grey {
+    color: grey;
+}
+
+.icons-yellow {
+    color: rgb(190, 190, 71);
+
+}
+
+.reviews_link {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews_link h4 {
+}
+
+.reviews_link button {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #c5c5c5;
+    cursor: pointer;
+}
+
+.pay_btn {
+
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 7px;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    display: block;
+    text-transform: uppercase;
+    background-color: #A9C9FF;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.pay_btn:hover {
+    background: #647895;
+}
+
+.sale {
+    background-color: #FFBBEC;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 7px;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    display: block;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sale:hover {
+    background: #a07895;
+}
+.sale,
+.pay_btn {
+    width: 100px;
+    height: 30px;
+}
+.btn_box{
+    /*display: flex;*/
+}

@@ -1,0 +1,6 @@
+FROM openjdk:17
+ARG jarFile=/cabinet-order-service/target/cabinet-order-service-2.7.9.jar
+WORKDIR /opt/app
+COPY ${jarFile} cabinet.jar
+EXPOSE 8192
+ENTRYPOINT ["java","-jar","cabinet.jar"]

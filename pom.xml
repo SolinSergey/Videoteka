@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ru.gb</groupId>
+    <artifactId>Videoteka</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Videoteka</name>
+    <description>Videoteka</description>
+
+    <modules>
+        <module>api</module>
+        <module>cabinet-order-service</module>
+        <module>cart-service</module>
+        <module>catalog-service</module>
+        <module>front-service</module>
+        <module>gateway-service</module>
+        <module>common</module>
+        <module>authorization-service</module>
+        <module>email-service</module>
+    </modules>
+
+</project>
