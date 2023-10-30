@@ -11,7 +11,7 @@ services:
       RABBITMQ_DEFAULT_PASS: "guest"
       RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: "-rabbit log_levels [{connection,error},{default,error}] disk_free_limit 2147483648"
     volumes:
-      - ~/rabbitmq:/var/lib/rabbitmq
+      - ~/rabbitmq:/var/lib/rabbitmq &&  sudo chmod 0700 /var/lib/rabbitmq
     networks:
       - videoteka-net
     restart: always
@@ -37,7 +37,7 @@ services:
       POSTGRES_PASSWORD: "SecurityVideoteka2023"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:
-      - ~/docker/users_roles_db:/var/lib/postgresql/data
+      - ~/docker/users_roles_db:/var/lib/postgresql/data && sudo chmod 0700 /var/lib/postgresql/data
     ports:
       - "5435:5432"
     networks:
@@ -53,7 +53,7 @@ services:
       POSTGRES_PASSWORD: "CatalogVideoteka2023"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:
-      - ~/docker/catalog_db:/var/lib/postgresql/data
+      - ~/docker/catalog_db:/var/lib/postgresql/data && sudo chmod 0700 /var/lib/postgresql/data
     ports:
       - "5433:5432"
     networks:
@@ -69,7 +69,7 @@ services:
       POSTGRES_PASSWORD: "OrdersVideoteka2023"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:
-      - ~/docker/orders_db:/var/lib/postgresql/data
+      - ~/docker/orders_db:/var/lib/postgresql/data && sudo chmod 0700 /var/lib/postgresql/data
     ports:
       - "5434:5432"
     networks:
